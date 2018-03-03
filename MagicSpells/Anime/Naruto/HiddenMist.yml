@@ -1,0 +1,99 @@
+variables:
+    DumLoop:
+        type: player
+        min: 0
+        max: 100
+        default: 0
+        permanent: false
+    AreaLoop:
+        type: player
+        min: 0
+        max: 20
+        default: 0
+        permanent: false
+ 
+#Main Multi
+NAHM_Main:
+    spell-class: ".MultiSpell"
+    name: "Ninja Arts: Hidden Mist"
+    cooldown: 35
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    spells:
+        - NAHM_Invis
+        - NAHM_DumMultTest
+        - NAHM_AreaMult
+ 
+#The reset spell
+ 
+Reset: #Dummy spell that sets the DumLoop and AreaLoop to 0 :)
+    spell-class: ".instant.DummySpell"
+    variable-mods-cast:
+          - DumLoop 0
+          - AreaLoop 0
+ 
+ 
+NAHM_DumMultTest:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    spells:
+        - NAHM_Dum
+        - DELAY 2
+        - NAHM_DumMultTest
+    variable-mods-cast:
+        - DumLoop 1
+    modifiers:
+        - variableequals DumLoop:100 castinstead Reset
+NAHM_Dum:
+    spell-class: ".instant.DummySpell"
+    effects:
+        1:
+            position: caster
+            effect: particles
+            horiz-spread: 0.85
+            vert-spread: 0.85
+            speed: 0
+            count: 100
+            particle-name: cloud
+ 
+# Area Part
+ 
+NAHM_AreaMult:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    spells:
+        - NAHM_Area
+        - DELAY 10
+        - NAHM_AreaMult
+    variable-mods-cast:
+        - AreaLoop 1
+    modifiers:
+        - variableequals AreaLoop:20 castinstead reset
+NAHM_Area:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 5
+    vertical-radius: 5
+    point-blank: true
+    fail-if-no-targets: false
+    can-target: players,monsters,animals
+    spells:
+        - NAHM_Pot
+NAHM_Pot:
+    spell-class: ".targeted.PotionEffectSpell"
+    type: 15
+    duration: 40
+    strength: 0
+    targeted: true
+    target-players: true
+    target-non-players: true
+    effects:
+    - target particles blockcrack_35_15 1.5 1.5 200 600
+ 
+NAHM_Invis:
+    spell-class: ".buff.InvisibilitySpell"
+    toggle: true
+    prevent-pickups: true
+    cancel-on-give-damage: false
+    cancel-on-logout: true
+    duration: 20
+    str-cast-self: You hide in the mist!
