@@ -14,7 +14,7 @@ Leap:
                 class: SphereEffect
                 particle: cloud
                 particles: 75
-                iterations: 2          
+                iterations: 2
 backflip:
     spell-class: ".instant.LeapSpell"
     name: Backflip
@@ -69,7 +69,7 @@ Substitution_recall:
         1:
             position: 1
             effect: effectlib
-            effectlib: 
+            effectlib:
                 class: SphereEffect
                 particle: smoke
                 radius: 0.75
