@@ -33,8 +33,6 @@ backflip:
                 particle: cloud
                 particles: 50
                 iterations: 1
-
-
 Substitution_wall:
     spell-class: ".instant.WallSpell"
     range: 1
@@ -85,7 +83,6 @@ Substitution_recall:
                particle: smoke
                radius: 0.75
                iterations: 10
-                
 Substitution:
     spell-class: ".MultiSpell"
     name: Substitution
@@ -96,7 +93,6 @@ Substitution:
         - Substitution_wall
         - DELAY 2
         - Substitution_recall
-
 haste:
     spell-class: ".buff.HasteSpell"
     name: haste
