@@ -1,0 +1,127 @@
+Leap:
+    spell-class: ".instant.LeapSpell"
+    name: Leap
+    cast-item: feather
+    forward-velocity: 20
+    upward-velocity: 20
+    cancel-damage: true
+    cooldown: 15
+    effects:
+        1:
+            position: caster
+            effect: effectlib
+            effectlib:
+                class: SphereEffect
+                particle: cloud
+                particles: 75
+                iterations: 2
+           
+backflip:
+    spell-class: ".instant.LeapSpell"
+    name: Backflip
+    cast-item: feather
+    forward-velocity: -35
+    upward-velocity: 10
+    cancel-damage: true
+    cooldown: 15
+    effects:
+        1:
+            position: caster
+            effect: effectlib
+            effectlib:
+                class: SphereEffect
+                particle: cloud
+                particles: 50
+                iterations: 1
+
+
+Substitution_wall:
+    spell-class: ".instant.WallSpell"
+    range: 1
+    wall-width: 1
+    wall-height: 2
+    wall-type: 17
+    wall-duration: 15
+Substitution_mark:
+    spell-class: ".instant.MarkSpell"
+    name: "Substitution mark"
+    permanent-marks: true
+    cast-item: stick
+    str-cast-self: You have marked your location.
+    effects:
+        1:
+            position: caster
+            effect: effectlib
+            effectlib:
+                class: HelixEffect
+                particle: VILLAGER_HAPPY
+                radius: 0.25
+                iterations: 1
+                particles: 45
+Substitution_recall:
+    spell-class: ".instant.RecallSpell"
+    mark-spell: Substitution_mark
+    max-range: 100
+    allow-cross-world: false
+    use-bed-location: false
+    str-cast-self: You substitute your body for an oak log.
+    str-no-mark: You have not marked a location to recall to.
+    str-other-world: You cannot recall to another world.
+    str-too-far: Your marked location is too far away.
+    effects:
+        1:
+            position: 1
+            effect: effectlib
+            effectlib: 
+                class: SphereEffect
+                particle: smoke
+                radius: 0.75
+                iterations: 10
+        2:
+            position: 2
+            effect: effectlib
+            effectlib:
+               class: SphereEffect
+               particle: smoke
+               radius: 0.75
+               iterations: 10
+                
+Substitution:
+    spell-class: ".MultiSpell"
+    name: Substitution
+    cast-item: stick
+    cooldown: 20
+    show-individual-messages: true
+    spells:
+        - Substitution_wall
+        - DELAY 2
+        - Substitution_recall
+
+haste:
+    spell-class: ".buff.HasteSpell"
+    name: haste
+    cast-item: stick
+    effect-strength: 3
+    boost-duration: 300
+    duration: 60
+    str-cast-self: You gain unnatural speed!
+    str-fade: You lose your unnatural speed.
+    effects:
+        1:
+            position: caster
+            effect: particles
+            particle-name: blockcrack_89_0
+            horiz-spread: 0.35
+            vert-spread: 0.1
+            y-offset: 0
+            count: 75
+            speed: 0.75
+        2:
+            position: caster
+            effect: particles
+            particle-name: blockcrack_95_4
+            horiz-spread: 0.35
+            vert-spread: 0.1
+            y-offset: 0
+            count: 75
+            speed: 0.75
