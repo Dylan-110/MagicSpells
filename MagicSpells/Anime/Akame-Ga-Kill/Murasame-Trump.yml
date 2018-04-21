@@ -1,0 +1,79 @@
+MurasameTrump_Main:
+    spell-class: ".MultiSpell"
+    name: "Murasame Trump"
+    cooldown: 30
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    spells:
+        - MurasameTrump_DumMult
+        - MurasameTrump_Spd
+        - MurasameTrump_Str
+        - MurasameTrump_Jmp
+MurasameTrump_DumMult:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    spells:
+        - MurasameTrump_Dum
+        - DELAY 2
+        - MurasameTrump_DumMult
+    variable-mods-cast:
+        - MurasameLoop 1
+    modifiers:
+        - variableequals MurasameLoop:175 castinstead ResetMurasame
+MurasameTrump_Dum:
+    spell-class: ".instant.DummySpell"
+    effects:
+        1:
+            position: caster
+            effect: particles
+            horiz-spread: 0.85
+            vert-spread: 0.85
+            speed: 0
+            count: 100
+            particle-name: smoke
+        2:
+            position: caster
+            effect: particles
+            horiz-spread: 0.85
+            vert-spread: 0.85
+            speed: 0
+            count: 100
+            particle-name: blockcrack_16_0
+        3:
+            position: caster
+            effect: effectlib
+            effectlib:
+                class: SmokeEffect
+                particle: REDSTONE
+                color: 000000
+                iterations: 2
+                radius: 0.5
+
+MurasameTrump_Spd:
+    spell-class: ".targeted.PotionEffectSpell"
+    type: 5
+    strength: 3
+    duration: 400
+    targeted: flase
+MurasameTrump_Str:
+    spell-class: ".targeted.PotionEffectSpell"
+    type: 1
+    strength: 2
+    duration: 400
+    targeted: flase
+MurasameTrump_Jmp:
+    spell-class: ".targeted.PotionEffectSpell"
+    type: 8
+    strength: 1
+    duration: 400
+    targeted: flase
+
+ResetMurasame: #Dummy spell that sets the DumLoop and AreaLoop to 0 :)
+    spell-class: ".instant.DummySpell"
+    variable-mods-cast:
+        - MurasameLoop 0
+# Trump Card:
+ # Activate Spell:
+  # Gives Speed Strength and small jump boost
+   # needed spells:
+    # - Potion Effect Spell (X3), Dummy Spell (Cool Effect), Multi-spell (Put All Spells Together)
