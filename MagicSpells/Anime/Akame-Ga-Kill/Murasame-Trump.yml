@@ -1,3 +1,10 @@
+variables:
+    MurasameLoop:
+        type: player
+        min: 0
+        max: 175
+        default: 0
+        permanent: false
 MurasameTrump_Main:
     spell-class: ".MultiSpell"
     name: "Murasame Trump"
