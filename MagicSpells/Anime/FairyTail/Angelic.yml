@@ -1,0 +1,145 @@
+AngelicTransformation:
+    spell-class: ".MultiSpell"
+    name: "Angelic Transformation"
+    cooldown: 35
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    spells:
+        - AngelicDummy
+        - AneglicRegen
+        - AneglicResistance
+        - AneglicWingFlight
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+        - DELAY 15
+        - AngelicDummy
+AngelicDummy:
+    spell-class: ".buff.DummySpell"
+    duration: 30
+    effects:
+      eff1:
+                  position: caster
+                  effect: effectlib
+                  effectlib:
+                        class: ImageEffect
+                        particle: REDSTONE
+                        fileName: plugins/MagicSpells/images/Wings.PNG #Replace "FILENAME" with the intended file
+                        isGif: false # Whether or not the image is a gif
+                        enableRotation: true # Whether or not to rotate with the caster
+                        stepY: 4 # How dense the particles should be (Makes higher resolutions at the cost of ping)
+                        stepX: 4 # How dense the particles should be (Makes higher resolutions at the cost of ping)
+                        size: 0.04 # Size of the effect
+                        iterations: 1 # The number of times the effect is played
+                        color: 707070 # Color of the effect
+                        period: 9        
+AneglicRegen:
+    spell-class: ".targeted.PotionEffectSpell"
+    cooldown: 15
+    range: 20
+    type: 10
+    strength: 3
+    duration: 600
+    targeted: false
+AneglicResistance:
+    spell-class: ".targeted.PotionEffectSpell"
+    cooldown: 15
+    range: 20
+    type: 11
+    strength: 3
+    duration: 600
+    targeted: false
+AneglicWingFlight:
+    spell-class: ".buff.WindwalkSpell"
+    max-altitude: 60
+    enabled: true
+    fly-speed: 0.1
+    launch-speed: 1
+    cancel-on-land: true
+    cancel-on-logout: true
+    cancel-on-teleport: false
+    cancel-on-give-damage: false
+    cancel-on-take-damage: false
+    duration: 30
+    str-cast-self: "&bYour Angelic Wing's allow you to fly"
+    str-cast-others: "%a &bAngelic Wing's allows him to fly"
+    effects:
+        1:
+            position: orbit
+            effect: particles
+            particle-name: blockcrack_89_0
+            horiz-spread: 0.2
+            vert-spread: 0.2
+            count: 100
+            speed: 0
+            orbit-counter-clockwise: true
+            orbit-seconds-per-revolution: .3
+            orbit-y-offset: 0.2
+            orbit-radius: 0.5
