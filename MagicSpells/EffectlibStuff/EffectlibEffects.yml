@@ -1,0 +1,725 @@
+DF1_2:
+   spell-class: ".instant.DummySpell"
+   effects:
+    ball:
+     position: caster
+     effect: effectlib
+     effectlib:
+       class: AnimatedBallEffect
+       particle: REDSTONE
+       color: 707070
+       size: 2
+       iterations: 15
+       xFactor: 0.8
+       zFactor: 0.8
+       yFactor: 0.5
+       yOffset: 1
+       zOffset: 0
+       xOffset: 0
+       particles: 100
+       
+#player effects      
+A:
+   spell-class: ".instant.DummySpell"
+   name: A
+   cast-item: emerald
+   effects:
+    image:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: ImageEffect
+       fileName: plugins/MagicSpells/images/index.png
+       size: 0.02
+       particle: REDSTONE
+       color: FF0000
+       stepX: 4 #low = more particles
+       stepY: 4 #low = more particles
+       iterations: 2
+       relativeOffset: 0,2,0
+B:
+   spell-class: ".instant.DummySpell"
+   name: B
+   cast-item: emerald
+   effects:
+    helix:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: HelixEffect
+       iterations: 5
+       relativeOffset: 0,1,0
+       particle: REDSTONE
+       color: FF0000
+       strands: 4
+       particles: 100
+       radius: 3
+       curve: 3
+#targeted effects
+C:
+   spell-class: ".instant.DummySpell"
+   name: C
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: ArcEffect
+       particle: FLAME
+       height: 2
+       particles: 100
+       step: 0
+       relativeOffset: 0,1,0
+     
+D:
+   spell-class: ".instant.DummySpell"
+   name: D
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: AtomEffect
+       particleNucleus: dripWater
+       particleOrbital: REDSTONE
+       colorOrbital: 040963
+       radius: 2
+       radiusNucleus: 0.5
+       particlesNucleus: 100
+       particlesOrbital: 100
+       orbitals: 6
+       rotation: 0
+       angularVelocity: 80
+       step: 1
+       relativeOffset: 0,2,0
+ 
+E:
+   spell-class: ".instant.DummySpell"
+   name: E
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: BigBangEffect
+       fireworkType: BURST
+       color: BLUE
+       color2: BLUE
+       color3: BLUE
+       fadeColor: RED
+       intensity: 2
+       radius: 2
+       explosions: 5
+       soundInterval: 5
+       sound: ENTITY_GENERIC_EXPLODE
+       soundVolume: 50
+       soundPitch: 1
+       step: 1
+       
+F:
+   spell-class: ".instant.DummySpell"
+   name: F
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: BleedEffect
+       hurt: False
+       duration: 10
+       height: 1.75
+       color: 152
+       period: 4
+       iterations: 25
+       
+G:
+   spell-class: ".instant.DummySpell"
+   name: G
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: CircleEffect
+       particle: FLAME
+       xRotation: 0.5
+       zRotation: 0.5
+       yRotation: 0.5
+       angularVelocityX: 50
+       angularVelocityY: 50
+       angularVelocityZ: 50
+       radius: 0.4
+       step: 0
+       enableRotation: True
+       particles: 20
+       period: 2
+       iterations: 50
+       relativeOffset: 0,1,0
+ 
+H:
+   spell-class: ".instant.DummySpell"
+   name: H
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: CloudEffect
+       cloudParticle: CLOUD
+       cloudColor: null
+       mainParticle: dripWater
+       cloudSize: 5
+       particleRadius: 2
+       yOffset: 0.8
+       period: 5
+       iterations: 50
+     
+I:
+   spell-class: ".instant.DummySpell"
+   name: I
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: ConeEffect
+       particle: FLAME
+       lengthGrow: 0.5
+       angularVelocity: 0.020
+       particles: 100
+       radiusGrow: 0.010
+       particlesCone: 180
+       rotation: 0
+       randomize: false
+       step: 0
+       period: 1
+       iterations: 200
+ 
+J:
+   spell-class: ".instant.DummySpell"
+   name: J
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: CubeEffect
+       particle: FLAME
+       edgeLength: 3
+       angluarVelocityX: 100
+       angularVelocityY: 100
+       angularVelocityZ: 100
+       particles: 100
+       enableRotation: True
+       outlineOnly: True
+       step: 0
+       iterations: 200
+       period: 5
+     
+K:
+   spell-class: ".instant.DummySpell"
+   name: K
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: CylinderEffect
+       particle: FLAME
+       radius: 1
+       height: 3
+       angularVelocityX: 100
+       angularVelocityZ: 100
+       angularVelocityY: 100
+       rotationX: 2
+       rotationY: 2
+       rotationZ: 2
+       particles: 100
+       enableRotation: true
+       solid: false
+       step: 0
+       sideRation: 0
+       period: 2
+       iterations: 200
+     
+L:
+   spell-class: ".instant.DummySpell"
+   name: L
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: DiscoBallEffect
+       sphereRadius: 0.6
+       max: 15
+       sphereParticle: FLAME
+       lineParticle: REDSTONE
+       sphereColor: null
+       lineColor: null
+       maxLines: 7
+       lineParticles: 100
+       sphereParticles: 50
+       direction: DOWN
+       iterations: 500
+       period: 7
+       
+M:
+   spell-class: ".instant.DummySpell"
+   name: M
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: DnaEffect
+       particleHelix: FLAME
+       colorHelix: null
+       particleBase1: waterWake
+       colorBase1: null
+       particleBase2: REDSTONE
+       colorBase2: null
+       radials: 30
+       radius: 1.5
+       particlesHelix: 3
+       particlesBase: 15
+       length: 15
+       grow: 0.2
+       baseInterval: 10
+       step: 0
+       period: 1
+       iterations: 500
+N:
+   spell-class: ".instant.DummySpell"
+   name: N
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: DonutEffect
+       particle: FLAME
+       particlesCircle: 10
+       circles: 36
+       radiusDonut: 2
+       radiusTube: 0.5
+       xRotation: 0
+       zRotation: 0
+       yRotation: 0
+       period: 10
+       iterations: 20
+       
+O:
+   spell-class: ".instant.DummySpell"
+   name: O
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: DragonEffect
+       particle: FLAME
+       pitch: 0.1
+       arcs: 20
+       particles: 30
+       stepsPerIteration: 2
+       length: 4
+       step: 0
+       period: 2
+       iterations: 200
+   
+P:
+   spell-class: ".instant.DummySpell"
+   name: P
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: EarthEffect
+       particle: FLAME
+       precision: 100
+       particles: 500
+       radius: 1
+       mountainHeight: 0.5
+       step: 0
+       fristStep: True
+       iterations: 200
+       period: 5
+ 
+Q:
+   spell-class: ".instant.DummySpell"
+   name: Q
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: ExplodeEffect
+       amount: 25
+       speed: 0.5
+       sound: ENTITY_GENERIC_EXPLODE
+       
+R:
+   spell-class: ".instant.DummySpell"
+   name: R
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: FlameEffect
+       period: 1
+       iterations: 600
+       type: repeating
+     
+S:
+   spell-class: ".instant.DummySpell"
+   name: S
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: FountainEffect
+       particle: waterSplash
+       strands: 10
+       particlesStrands: 150
+       particlesSpout: 200
+       radius: 5
+       radiusSpout: 0.1
+       height: 3
+       heightSpout: 7
+       rotation: 4
+       period: 2
+       iterations: 100
+       
+T:
+   spell-class: ".instant.DummySpell"
+   name: T
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: GridEffect
+       particle: flame
+       rows: 5
+       columns: 10
+       widthCell: 1
+       heightCell: 1
+       particlesWidth: 4
+       particlesHeight: 3
+       rotation: 0
+       period: 5
+       iterations: 50
+       
+U:
+   spell-class: ".instant.DummySpell"
+   name: U
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: HeartEffect
+       particle: critMagic
+       particles: 50
+       yFactor: 1
+       xFactor: 1
+       factorInnerSpike: 0.8
+       compressYFactorTotal: 2
+       compilaction: 2
+       iterations:
+       period:
+       
+V:
+   spell-class: ".instant.DummySpell"
+   name: V
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: HillEffect
+       particle: flame
+       height: 2.5
+       particles: 30
+       edgeLength: 6.5
+       yRotation: 7
+       period: 10
+       iterations: 20
+       
+W:
+   spell-class: ".instant.DummySpell"
+   name: W
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: IconEffect
+       particle: villagerAngry
+       yOffset: 2
+       period: 4
+       iterations: 25
+       
+X:
+   spell-class: ".instant.DummySpell"
+   name: X
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: JumpEffect
+       power: 0.5
+       period: 20
+       iterations: 1
+       
+Y:
+   spell-class: ".instant.DummySpell"
+   name: Y
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: LineEffect
+       particle: FLAME
+       isZigZag: false
+       zigZags: 10
+       zigZagOffset:
+       particles:
+       length:
+       zag: false
+       step: 0
+       iterations: 1
+       period: 1
+     
+Z:
+   spell-class: ".instant.DummySpell"
+   name: Z
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: ShieldEffect
+       particle: FLAME
+       radius: 3
+       particles: 50
+       sphere: false
+       iterations: 500
+       period: 1
+       
+A1:
+   spell-class: ".instant.DummySpell"
+   name: A1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: SkyRocketEffect
+       power: 10
+       
+B1:
+   spell-class: ".instant.DummySpell"
+   name: B1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: SmokeEffect
+       particle: smokeNormal
+       period: 1
+       iterations: 300
+       
+C1:
+   spell-class: ".instant.DummySpell"
+   name: C1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: SphereEffect
+       particle: spellMob
+       radius: 0.6
+       yOffset: 0
+       particles: 50
+       radiusIncrease: 0
+       iterations: 500
+       period: 1
+       
+D1:
+   spell-class: ".instant.DummySpell"
+   name: D1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: StarEffect
+       particle: FLAME
+       particles: 50
+       spikeHeight: 3.5
+       spikesHalf: 3
+       innerRadius: 0.5
+       period: 4
+       iterations: 50
+       
+E1:
+   spell-class: ".instant.DummySpell"
+   name: E1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: TextEffect
+       particle: fireworksSpark
+       text: "Damn"
+       invert: false
+       stepX: 1
+       stepY: 1
+       size: 1 / 5
+       realtime: false
+       period: 40
+       iterations: 20
+       
+F1:
+   spell-class: ".instant.DummySpell"
+   name: F1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: TornadoEffect
+       tornadoParticle: Flame
+       tornadoColor: null
+       cloudParticle: CLOUD
+       cloudColor: null
+       cloudSize: 2.5
+       yOffset: .8
+       tornadoHeight: 5
+       maxTornadoRadius: 5
+       showCloud: true
+       showTornado: True
+       distance: .375
+       step: 0
+       iterations: 20
+       period: 5
+       
+G1:
+   spell-class: ".instant.DummySpell"
+   name: G1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: CloudEffect
+       particle: FLAME
+       refresh: 5
+       maxWayPoints: 30
+       step: 0
+       period: 1
+       iterations: 600
+       
+H1:
+   spell-class: ".instant.DummySpell"
+   name: H1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: VortexEffect
+       particle: flame
+       radius: 2
+       grow: 0.5
+       radials: 5
+       circles: 3
+       helixes: 4
+       step: 0
+       period: 1
+       iterations: 200
+       
+I1:
+   spell-class: ".instant.DummySpell"
+   name: I1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: WarpEffect
+       radius: 1
+       particles: 20
+       particle: fireworkSpark
+       grow: .2
+       rings: 12
+       step: 0
+       period: 2
+       
+J1:
+   spell-class: ".instant.DummySpell"
+   name: J1
+   cast-item: emerald
+   effects:
+    arc:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: WaveEffect
+       particle: dripWater
+       velocity: 2
+       particlesFront: 10
+       particlesBack: 10
+       rows: 20
+       lengthFront: 1.5
+       lengthBack: 3
+       depthFront: 1
+       heightBack: .5
+       height: 2
+       width: 5
+       firstStep: true
+       period: 5
+       iterations: 50
