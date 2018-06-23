@@ -1,0 +1,1554 @@
+Volcano:
+    spell-class: ".TargetedMultiSpell"
+    description: Summons a volcano which shots blazing rock.
+    name: "&4Lava Release: Volcanic Devestation"
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    check-individual-modifiers: true
+    range: 20
+    cooldown: 70
+    str-cast-self: "You sprout an erupting volcano!"
+    str-cast-others: "%a &4&luses Lava Style Volcanic Eruption!"
+    spells:
+        - EFFvolcanorise1
+        - SOUNDvolcano1
+        - DELAY 4
+        - EFFvolcanorise2
+        - DELAY 4
+        - EFFvolcanorise3
+        - DELAY 4
+        - EFFvolcanorise4
+        - DELAY 4
+        - EFFvolcanorise5
+        - DELAY 4
+        - EFFvolcanorise6
+        - DELAY 4
+        - EFFvolcanorise7
+        - DELAY 4
+        - EFFvolcanorise8
+        - DELAY 4
+        - MULTI_volcano
+        - EFFvolcanoshot
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanoshot
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - MULTI_volcano
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanoshot
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - MULTI_volcano
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanoshot
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - MULTI_volcano
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanoshot
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - MULTI_volcano
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanoshot
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - MULTI_volcano
+        - EFFvolcanorise8
+        - EFFvolcanolava
+        - SOUNDvolcano2
+        - DELAY 4
+        - EFFvolcanorise7
+        - DELAY 3
+        - EFFvolcanorise6
+        - DELAY 3
+        - EFFvolcanorise5
+        - DELAY 3
+        - EFFvolcanorise4
+        - DELAY 3
+        - EFFvolcanorise3
+        - DELAY 3
+        - EFFvolcanorise2
+        - DELAY 3
+        - EFFvolcanorise1
+DAMAGE_volcano:
+    spell-class: ".targeted.PainSpell"
+    damage: 4
+    range: 20
+    ignore-armor: false
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    beneficial: false
+COMBUST_volcano:
+    spell-class: ".targeted.CombustSpell"
+    range: 20
+    obey-los: true
+    fire-ticks: 100
+    fire-tick-damage: 2
+    prevent-immunity: false
+    can-target: players,nonplayers
+    check-plugins: true
+    beneficial: false
+MULTI_volcano:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: false
+    can-target: self
+    check-individual-modifiers: true
+    spells:
+        - EFFvolcanomissile1
+        - SOUNDvolcano3
+        - DELAY 2
+        - EFFvolcanomissile2
+        - DELAY 2
+        - EFFvolcanomissile3
+        - DELAY 2
+        - EFFvolcanomissile4
+        - DELAY 2
+        - EFFvolcanomissile5
+        - DELAY 2
+        - EFFvolcanomissile6
+        - DELAY 2
+        - EFFvolcanomissile7
+        - DELAY 2
+        - EFFvolcanomissile8
+        - DELAY 1
+        - EFFvolcanomissile9
+        - DELAY 1
+        - AOE_volcanorock2
+        - EFFvolcanomissile9
+        - DELAY 1
+        - AOE_volcanorock1
+        - EFFvolcanomissile9
+AOE_volcanorock1:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 3
+    vertical-radius: 4
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - TOSS_volcano
+TOSS_volcano:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 15
+    damage: 0
+    horizontal-force: 5
+    vertical-force: 2
+    obey-los: true
+    can-target: players,nonplayers
+    check-plugins: true
+    beneficial: false
+AOE_volcanorock2:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 10
+    vertical-radius: 5
+    point-blank: false
+    can-target: players,nonplayers
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - MULTI_volcanorock
+MULTI_volcanorock:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: true
+    can-target: players,nonplayers
+    check-individual-modifiers: true
+    spells:
+        - EFFvolcanorock1
+        - SOUNDvolcanorock1
+        - DELAY 1
+        - EFFvolcanorock2
+        - DELAY 1
+        - EFFvolcanorock3
+        - SOUNDvolcanorock2
+        - DELAY 1
+        - EFFvolcanorock4
+        - DELAY 1
+        - EFFvolcanorock5
+        - SOUNDvolcanorock3
+        - DELAY 1
+        - EFFvolcanorock6
+        - DELAY 1
+        - EFFvolcanorock7
+        - SOUNDvolcanorock4
+        - DELAY 1
+        - EFFvolcanorock8
+        - DELAY 1
+        - EFFvolcanorock9
+        - SOUNDvolcanorock5
+        - DELAY 1
+        - EFFvolcanorock10
+        - DELAY 1
+        - EFFvolcanorock11
+        - SOUNDvolcanorock6
+        - DELAY 1
+        - EFFvolcanorock12
+        - DELAY 1
+        - DAMAGE_volcano
+        - COMBUST_volcano
+        - WEAK_volcano
+        - SLOW_volcano_1
+        - SLOW_volcano_2
+        - BLIND_volcano
+        - EFFvolcanorock13
+        - SOUNDvolcanorock7
+WEAK_volcano:
+    spell-class: ".targeted.PotionEffectSpell"
+    range: 20
+    type: 18
+    strength: 5
+    duration: 40
+    targeted: true
+    can-target: players,nonplayers
+    obey-los: true
+    beneficial: false
+SLOW_volcano_1:
+    spell-class: ".targeted.PotionEffectSpell"
+    range: 20
+    type: 2
+    strength: 2
+    duration: 40
+    targeted: true
+    can-target: players,nonplayers
+    obey-los: true
+    beneficial: false
+SLOW_volcano_2:
+    spell-class: ".targeted.PotionEffectSpell"
+    range: 20
+    type: 2
+    strength: 100
+    duration: 5
+    targeted: true
+    can-target: players,nonplayers
+    obey-los: true
+    beneficial: false
+BLIND_volcano:
+    spell-class: ".targeted.PotionEffectSpell"
+    range: 20
+    type: 15
+    strength: 2
+    duration: 20
+    targeted: true
+    can-target: players,nonplayers
+    obey-los: true
+    beneficial: false
+EFFvolcanorock1:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 13.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 13.0
+EFFvolcanorock2:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 12.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 12.0
+EFFvolcanorock3:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 11.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 11.0
+EFFvolcanorock4:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 10.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 10.0
+EFFvolcanorock5:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 9.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 9.0
+EFFvolcanorock6:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 8.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 8.0
+EFFvolcanorock7:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 7.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 7.0
+EFFvolcanorock8:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 6.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 6.0
+EFFvolcanorock9:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 5.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 5.0
+EFFvolcanorock10:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 4.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 4.0
+EFFvolcanorock11:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 3.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 3.0
+EFFvolcanorock12:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 2.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 2.0
+EFFvolcanorock13:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      volcano1:
+        position: target
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 20
+        y-offset: 1.0
+      volcano2:
+        position: target
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0
+        count: 30
+        y-offset: 1.0
+SOUNDvolcanorock1:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      sound:
+        position: target
+        effect: sound
+        sound: fireworks.launch
+        volume: 0.1
+        pitch: 0.1
+SOUNDvolcanorock2:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      sound:
+        position: target
+        effect: sound
+        sound: fireworks.launch
+        volume: 0.3
+        pitch: 0.1
+SOUNDvolcanorock3:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      sound:
+        position: target
+        effect: sound
+        sound: fireworks.launch
+        volume: 0.5
+        pitch: 0.1
+SOUNDvolcanorock4:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      sound:
+        position: target
+        effect: sound
+        sound: fireworks.launch
+        volume: 0.7
+        pitch: 0.1
+SOUNDvolcanorock5:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      sound:
+        position: target
+        effect: sound
+        sound: fireworks.launch
+        volume: 0.9
+        pitch: 0.1
+SOUNDvolcanorock6:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      sound:
+        position: target
+        effect: sound
+        sound: fireworks.launch
+        volume: 1.1
+        pitch: 0.1
+SOUNDvolcanorock7:
+    spell-class: ".targeted.DummySpell"
+    effects:
+      sound1:
+        position: target
+        effect: sound
+        sound: random.explode
+        volume: 1.0
+        pitch: 2.0
+      sound2:
+        position: target
+        effect: sound
+        sound: mob.zombie.remedy
+        volume: 1.0
+        pitch: 2.0
+EFFvolcanorise1:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 100
+        y-offset: 1.0
+EFFvolcanorise2:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 100
+        y-offset: 1.5
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.3
+        vert-spread: 0.1
+        speed: 0.1
+        count: 150
+        y-offset: 1.0
+EFFvolcanorise3:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 100
+        y-offset: 2.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.3
+        vert-spread: 0.1
+        speed: 0.1
+        count: 150
+        y-offset: 1.5
+      volcano3:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.5
+        vert-spread: 0.1
+        speed: 0.1
+        count: 200
+        y-offset: 1.0
+EFFvolcanorise4:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 100
+        y-offset: 2.5
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.3
+        vert-spread: 0.1
+        speed: 0.1
+        count: 150
+        y-offset: 2.0
+      volcano3:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.5
+        vert-spread: 0.1
+        speed: 0.1
+        count: 200
+        y-offset: 1.5
+      volcano4:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.7
+        vert-spread: 0.1
+        speed: 0.1
+        count: 250
+        y-offset: 1.0
+EFFvolcanorise5:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 100
+        y-offset: 3.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.3
+        vert-spread: 0.1
+        speed: 0.1
+        count: 150
+        y-offset: 2.5
+      volcano3:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.5
+        vert-spread: 0.1
+        speed: 0.1
+        count: 200
+        y-offset: 2.0
+      volcano4:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.7
+        vert-spread: 0.1
+        speed: 0.1
+        count: 250
+        y-offset: 1.5
+      volcano5:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.9
+        vert-spread: 0.1
+        speed: 0.1
+        count: 300
+        y-offset: 1.0
+EFFvolcanorise6:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 100
+        y-offset: 3.5
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.3
+        vert-spread: 0.1
+        speed: 0.1
+        count: 150
+        y-offset: 3.0
+      volcano3:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.5
+        vert-spread: 0.1
+        speed: 0.1
+        count: 200
+        y-offset: 2.5
+      volcano4:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.7
+        vert-spread: 0.1
+        speed: 0.1
+        count: 250
+        y-offset: 2.0
+      volcano5:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.9
+        vert-spread: 0.1
+        speed: 0.1
+        count: 300
+        y-offset: 1.5
+      volcano6:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 1.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 350
+        y-offset: 1.0
+EFFvolcanorise7:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 100
+        y-offset: 4.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.3
+        vert-spread: 0.1
+        speed: 0.1
+        count: 150
+        y-offset: 3.5
+      volcano3:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.5
+        vert-spread: 0.1
+        speed: 0.1
+        count: 200
+        y-offset: 3.0
+      volcano4:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.7
+        vert-spread: 0.1
+        speed: 0.1
+        count: 250
+        y-offset: 2.5
+      volcano5:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.9
+        vert-spread: 0.1
+        speed: 0.1
+        count: 300
+        y-offset: 2.0
+      volcano6:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 1.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 350
+        y-offset: 1.5
+      volcano7:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 1.3
+        vert-spread: 0.1
+        speed: 0.1
+        count: 400
+        y-offset: 1.0
+EFFvolcanorise8:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 60
+        y-offset: 4.5
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.3
+        vert-spread: 0.1
+        speed: 0.1
+        count: 110
+        y-offset: 4.0
+      volcano3:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.5
+        vert-spread: 0.1
+        speed: 0.1
+        count: 160
+        y-offset: 3.5
+      volcano4:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.7
+        vert-spread: 0.1
+        speed: 0.1
+        count: 210
+        y-offset: 3.0
+      volcano5:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 0.9
+        vert-spread: 0.1
+        speed: 0.1
+        count: 260
+        y-offset: 2.5
+      volcano6:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 1.1
+        vert-spread: 0.1
+        speed: 0.1
+        count: 310
+        y-offset: 2.0
+      volcano7:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 1.3
+        vert-spread: 0.1
+        speed: 0.1
+        count: 360
+        y-offset: 1.5
+      volcano8:
+        position: special
+        effect: particles
+        particle-name: blockcrack_03_3
+        horiz-spread: 1.5
+        vert-spread: 0.1
+        speed: 0.1
+        count: 410
+        y-offset: 1.0
+EFFvolcanolava:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.2
+        vert-spread: 0.1
+        speed: 0
+        count: 50
+        y-offset: 4.5
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.4
+        vert-spread: 0.1
+        speed: 0
+        count: 90
+        y-offset: 4.0
+      volcano3:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.6
+        vert-spread: 0.1
+        speed: 0
+        count: 140
+        y-offset: 3.5
+      volcano4:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.8
+        vert-spread: 0.1
+        speed: 0
+        count: 190
+        y-offset: 3.0
+      volcano5:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 1.0
+        vert-spread: 0.1
+        speed: 0
+        count: 240
+        y-offset: 2.5
+      volcano6:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 1.2
+        vert-spread: 0.1
+        speed: 0
+        count: 290
+        y-offset: 2.0
+      volcano7:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 1.4
+        vert-spread: 0.1
+        speed: 0
+        count: 340
+        y-offset: 1.5
+      volcano8:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 1.6
+        vert-spread: 0.1
+        speed: 0
+        count: 390
+        y-offset: 1.0
+      volcanoshot:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.8
+        vert-spread: 1.0
+        speed: 0
+        count: 150
+        y-offset: 4.0
+EFFvolcanoshot:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.8
+        vert-spread: 1.0
+        speed: 0
+        count: 150
+        y-offset: 4.0
+EFFvolcanomissile1:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 60
+        y-offset: 6.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 80
+        y-offset: 6.0
+EFFvolcanomissile2:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 60
+        y-offset: 7.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 80
+        y-offset: 7.0
+EFFvolcanomissile3:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 60
+        y-offset: 8.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 80
+        y-offset: 8.0
+EFFvolcanomissile4:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 60
+        y-offset: 9.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 80
+        y-offset: 9.0
+EFFvolcanomissile5:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 60
+        y-offset: 10.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 80
+        y-offset: 10.0
+EFFvolcanomissile6:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 60
+        y-offset: 11.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 80
+        y-offset: 11.0
+EFFvolcanomissile7:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 60
+        y-offset: 12.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 80
+        y-offset: 12.0
+EFFvolcanomissile8:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 60
+        y-offset: 13.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 0.4
+        vert-spread: 0.4
+        speed: 0
+        count: 80
+        y-offset: 13.0
+EFFvolcanomissile9:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      volcano1:
+        position: special
+        effect: particles
+        particle-name: lava
+        horiz-spread: 2.0
+        vert-spread: 1.0
+        speed: 0
+        count: 300
+        y-offset: 14.0
+      volcano2:
+        position: special
+        effect: particles
+        particle-name: reddust
+        horiz-spread: 2.0
+        vert-spread: 1.0
+        speed: 0
+        count: 300
+        y-offset: 14.0
+SOUNDvolcano1:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      sound:
+        position: special
+        effect: sound
+        sound:  minecart.inside
+        volume: 2.0
+        pitch: 2.0
+SOUNDvolcano2:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      sound1:
+        position: special
+        effect: sound
+        sound: random.explode
+        volume: 1.0
+        pitch: 0.1
+      sound2:
+        position: special
+        effect: sound
+        sound: mob.zombie.infect
+        volume: 1.0
+        pitch: 0.1
+      sound3:
+        position: special
+        effect: sound
+        sound: mob.zombie.remedy
+        volume: 0.5
+        pitch: 2.0
+SOUNDvolcano3:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 100000
+    vertical-radius: 100000
+    point-blank: false
+    can-target: self,players,nonplayers
+    target-caster: true
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    spells:
+        - DUMMYvolcano
+    effects:
+      sound:
+        position: special
+        effect: sound
+        sound: mob.zombie.remedy
+        volume: 1.5
+        pitch: 0.1
+DUMMYvolcano:
+    spell-class: ".targeted.DummySpell"
+    
+variables:
+    DumLoop:
+        type: player
+        min: 0
+        max: 100
+        default: 0
+        permanent: false
+    AreaLoop:
+        type: player
+        min: 0
+        max: 20
+        default: 0
+        permanent: false
