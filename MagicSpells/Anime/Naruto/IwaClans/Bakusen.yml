@@ -1,0 +1,138 @@
+Bakusen1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    name: "C1 Clay Style"
+    cooldown: 40
+    cost:
+        - mana 40
+    str-cost: 40 mana
+    hit-players: true
+    hit-radius: 2
+    projectile-velocity: 15
+    projectile-gravity: 0
+    tick-interval: 1
+    particle-name: largeexplode
+    particle-horizontal-spread: 0.9
+    particle-vertical-spread: 0.9
+    particle-count: 10
+    max-duration: 100
+    max-distance: 20
+    special-effect-interval: 1
+    stop-on-hit-entity: true
+    spell: Bakusen1_1
+    effects:
+        2:
+            position: special
+            effect: fireworks
+            type: 0
+            flicker: true
+            trail: false
+            colors: FFFFFF
+Bakusen1_1:
+    spell-class: ".targeted.PainSpell"
+    damage: 5
+    range: 10
+    ignore-armor: false
+    target-players: true
+    effects:
+        2:
+            position: target
+            effect: particles
+            particle-name: largeexplode
+            count: 10
+            horiz-spread: 1
+            vert-spread: 1
+Bakusen2:
+    spell-class: ".MultiSpell"
+    name: "C2 Explosion"
+    cooldown: 40
+    cost:
+     - mana 30
+    str-cost: 30 mana
+    check-individual-cooldowns: false
+    spells:
+    - Bakusen2_1
+    - Bakusen2_2
+Bakusen2_1:
+    spell-class: ".targeted.PainSpell"
+    damage: 7
+    range: 10
+    ignore-armor: false
+    target-players: true
+Bakusen2_2:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 10
+    damage: 0
+    horizontal-force: 20
+    vertical-force: 10
+    obey-los: true
+    target-players: true
+    check-plugins: true
+    effects:
+    - trail particles blockcrack_159_0 0.5 0.5 10 100
+Bakusen3:
+    name: "C3 Clay Explosion"
+    cooldown: 40
+    cost:
+        - mana 40
+    str-cost: 40 mana
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    spells:
+    - Bakusen3_multi
+Bakusen3_multi:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    spells:
+    - Bakusen3_3
+    - Bakusen3_2
+Bakusen3_1:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 15
+    damage: 8
+    horizontal-force: 20
+    vertical-force: 10
+    can-target: players,monsters,animals
+    check-plugins: true
+    effects:
+      eff1:
+                  position: caster
+                  effect: effectlib
+                  effectlib:
+                      class: SphereEffect
+                      particle: REDSTONE
+                      iterations: 5
+                      radius: 2
+                      particles: 100
+                      period: 1
+                      visibleRange: 100
+                      color: FFFFFF
+                      relativeOffset: 0,2,0
+      eff2:
+                  position: target
+                  effect: effectlib
+                  effectlib:
+                      class: SphereEffect
+                      particle: REDSTONE
+                      iterations: 5
+                      radius: 2
+                      particles: 100
+                      period: 1
+                      visibleRange: 100
+                      color: 000000
+                      relativeOffset: 0,2,0
+Bakusen3_2:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 7
+    vertical-radius: 7
+    spell-source-in-center: false
+    point-blank: true
+    target-players: true
+    fail-if-no-targets: true
+    spells:
+        - Bakusen3_1
+Bakusen3_3:
+    spell-class: ".targeted.PainSpell"
+    damage: 7
+    range: 10
+    ignore-armor: false
+    target-players: true
