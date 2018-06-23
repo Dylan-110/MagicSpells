@@ -1,0 +1,184 @@
+Kamizuru1:
+    spell-class: ".ExternalCommandSpell"
+    name: "Rock Hive"
+    cost:
+     - mana 30
+    str-cost: 30 mana
+    cast-item: magma_cream
+    cooldown: 10
+    command-to-execute:
+    - "/hsphere 1,4 4"
+    command-to-execute-later:
+    - "undo"
+    command-delay: 100
+    temporary-op: true
+    require-player-target: false
+    execute-as-target-instead: false
+Kamizuru2:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    cost:
+     - mana 45
+    str-cost: 45 mana
+    name: "Bee Bomb"
+    cast-item: magma_cream
+    cooldown: 15
+    spells:
+    - Kamizuru2_proj
+    - DELAY 20
+    - Kamizuru2_proj
+    - DELAY 20
+    - Kamizuru2_proj
+Kamizuru2_multi:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: true
+    spells:
+        - Kamizuru2_pain
+        - Kamizuru2_pain1
+        - Kamizuru2_forcetoss
+Kamizuru2_proj:
+    spell-class: ".instant.ParticleProjectileSpell"
+    hit-players: true
+    hit-radius: 2.5
+    projectile-velocity: 20
+    projectile-gravity: 0
+    tick-interval: 1
+    particle-name: blockcrack_160_4
+    particle-horizontal-spread: 0.4
+    particle-vertical-spread: 0.4
+    particle-count: 100
+    max-duration: 50
+    max-distance: 20
+    special-effect-interval: 1
+    stop-on-hit-entity: true
+    spell: Kamizuru2_multi
+    effects:
+        1:
+            position: special
+            effect: particles
+            particle-name: blockdust_160_4
+            horiz-spread: 0.4
+            vert-spread: 0.4
+            count: 100
+            y-offset: 0.7
+        2:
+            position: special
+            effect: particles
+            particle-name: blockdust_160_4
+            horiz-spread: 0.4
+            vert-spread: 0.4
+            count: 100
+            y-offset: 0.7      
+Kamizuru2_forcetoss:
+    spell-class: ".targeted.ForcetossSpell"
+    horizontal-force: 5
+    vertical-force: 5
+    target-players: true
+Kamizuru2_pain1:
+    spell-class: ".targeted.PainSpell"
+    damage: 1
+    range: 10
+    ignore-armor: false
+    target-players: true
+    effects:
+        1:
+            position: target
+            effect: explosion
+        2:
+            position: target
+            effect: particles
+            particle-name: largeexplode
+            count: 10
+            horiz-spread: 0.5
+            vert-spread: 0.5
+Kamizuru2_pain:
+    spell-class: ".targeted.PainSpell"
+    damage: 1
+    range: 10
+    ignore-armor: false
+    target-players: true
+    effects:
+        1:
+           position: target
+           effect: particles
+           particle-name: blockdust_160_4
+           horiz-spread: 0.4
+           vert-spread: 0.4
+           count: 100
+           y-offset: 0.7
+        2:
+           position: target
+           effect: particles
+           particle-name: blockdust_35_4
+           horiz-spread: 0.4
+           vert-spread: 0.4
+           count: 100
+           y-offset: 0.7
+Kamizuru3_aoe:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 10
+    vertical-radius: 5
+    point-blank: true
+    target-players: false
+    fail-if-no-targets: false
+    spells:
+        - Kamizuru3_1
+        - Kamizuru3_2
+Kamizuru3_1:
+    spell-class: ".targeted.PotionEffectSpell"
+    type: 19
+    strength: 1
+    duration: 80
+    targeted: true
+    target-players: true
+    target-non-players: true
+    effects:
+    - target particles blockcrack_35_4 1.5 1.5 200 600
+Kamizuru3_2:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 10
+    damage: 0
+    horizontal-force: 20
+    vertical-force: 10
+    obey-los: true
+    target-players: true
+    check-plugins: true
+Kamizuru3_dummy:
+    spell-class: ".targeted.DummySpell"
+    target-self: true
+    effects:
+        1:
+            position: target
+            effect: particles
+            duration: 100
+            particle-name: blockcrack_35_4
+            horiz-spread: 0.7
+            vert-spread: 0.7
+            count: 250
+            y-offset: 1.5
+        2:
+            position: target
+            effect: particles
+            particle-name: blockcrack_160_4
+            horiz-spread: 0.7
+            vert-spread: 0.7
+            count: 250
+            y-offset: 1.5
+Kamizuru3_multi:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    spells:
+       - Kamizuru3_aoe
+       - Kamizuru3_dummy
+Kamizuru3:
+    spell-class: ".MultiSpell"
+    name: "Bee Honey"
+    cast-item: magma_cream
+    cooldown: 17
+    cost:
+     - mana 30
+    str-cost: 30 mana
+    check-individual-cooldowns: false
+    spells:
+    - Kamizuru3_multi
