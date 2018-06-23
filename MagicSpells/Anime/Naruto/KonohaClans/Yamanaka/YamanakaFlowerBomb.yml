@@ -46,4 +46,4 @@ YamanakaFlowerBomb_Pain:
             particle-name: largeexplode
             count: 50
             horiz-spread: 0.5
-vert-spread: 0.5
+            vert-spread: 0.5
