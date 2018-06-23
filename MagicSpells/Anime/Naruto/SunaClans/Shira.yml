@@ -1,0 +1,130 @@
+Shira1:
+    spell-class: ".MultiSpell"
+    name: "Seven Heavens Breathing Method"
+    cost:
+        - mana 35
+    str-cost: 35 Chakra
+    cast-item: magma_cream
+    cooldown: 15
+    spells:
+        - Shira1_1
+        - Shira1_2
+        - Shira1_3
+Shira1_1:
+    spell-class: ".buff.DummySpell"
+    duration: 10
+    effects:
+      1:
+       position: buff
+       effect: particles
+       particle-name: blockcrack_95_1
+       horiz-spread: 0.3
+       vert-spread: 0.5
+       effect-interval: 0.5
+       speed: 0
+       count: 75
+      2:
+       position: buff
+       effect: particles
+       particle-name: mobSpell
+       horiz-spread: 0.3
+       vert-spread: 0.5
+       effect-interval: 0.5
+       speed: 0
+       count: 50
+Shira1_2:
+    spell-class: ".targeted.PotionEffectSpell"
+    type: 1
+    strength: 1
+    duration: 200
+    effect-interval: 1
+    target-caster: true
+Shira1_3:
+    spell-class: ".buff.EmpowerSpell"
+    power-multiplier: 1.2
+    duration: 10
+Shira2:
+    spell-class: ".TargetedMultiSpell"
+    name: "Silent Fist"
+    cost:
+        - mana 25
+    str-cost: 25 Chakra
+    cast-item: magma_cream
+    cooldown: 12
+    range: 7
+    check-individual-cooldowns: false
+    require-entity-target: true
+    target-players: true
+    spells:
+        - Shira2_1
+        - Shira2_2
+        - Shira2_3
+    check-plugins: true
+Shira2_1:
+    spell-class: ".targeted.PainSpell"
+    damage: 4
+    range: 7
+    ignore-armor: true
+    obey-los: true
+    target-players: true
+    effects:
+      eff1:
+                  position: target
+                  effect: effectlib
+                  effectlib:
+                      class: SphereEffect
+                      particle: REDSTONE
+                      iterations: 5
+                      radius: 0.5
+                      particles: 10
+                      period: 1
+                      visibleRange: 10
+                      color: 0000ff
+                      relativeOffset: 0,0.5,0
+Shira2_2:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 7
+    damage: 0
+    horizontal-force: 7
+    vertical-force: 7
+    obey-los: true
+    target-players: true
+Shira2_3:
+    spell-class: ".instant.DummySpell"
+    effects:
+        1:
+          position: caster
+          effect: particles
+          particle-name: blockcrack_35_3
+          count: 100
+          horiz-spread: 0.5
+          vert-spread: 0.6
+Shira3:
+    spell-class: ".MultiSpell"
+    name: "Tenketsu Blocking Strikes"
+    cooldown: 10
+    cost:
+     - mana 30
+    str-cost: 30 mana
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    spells:
+    - Shira3_1
+    - Shira3_2
+Shira3_1:
+    spell-class: ".targeted.PainSpell"
+    damage: 3
+    range: 7
+    ignore-armor: false
+    target-players: true
+Shira3_1:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 7
+    damage: 0
+    horizontal-force: 10
+    vertical-force: 10
+    obey-los: true
+    target-players: true
+    check-plugins: true
+    effects:
+    - target particles blockcrack_35_3 0.7 0.7 10 100
