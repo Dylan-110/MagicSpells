@@ -1,0 +1,169 @@
+H_WG:
+    spell-class: ".instant.ParticleProjectileSpell"
+    name: "&bWater Gun"
+    cast-item: magma_cream
+    stop-on-hit-ground: true
+    projectile-velocity: 50
+    cooldown: 25
+    particle-name: DROPLET
+    particle-count: 20
+    projectile-gravity: 0
+    tick-interval: 2
+    special-effect-interval: 1
+    max-distance: 10
+    hit-radius: 5
+    hit-players: true
+    stop-on-hit-entity: true
+    hit-non-players: true
+    spell: H_WGP
+    effects:
+           effH:
+               position: special
+               effect: effectlib
+               effectlib:
+                   class: VortexEffect
+                   particle: DRIP_WATER
+                   radius: 0.35
+                   grow: 0.11
+                   circles: 7
+                   helixes: 7
+                   radials: 2
+                   particles: 75
+                   period: 1
+                   iterations: 7
+           effS:
+               position: caster
+               effect: sound
+               sound: entity.generic.explode
+               volume: 2.0
+               pitch: 0.5
+H_WGP:
+    spell-class: ".targeted.PainSpell"
+    damage: 10
+    range: 5
+    ignore-armor: false
+    target-players: true
+    effects:
+       S:
+            position: target
+            effect: sound
+            sound: entity.generic.extinguish_fire
+            volume: 1.5
+            pitch: 0.3
+            
+Hozuki1DUM:
+    spell-class: ".buff.DummySpell"
+    duration: 20
+    effects:
+        1:
+            position: buff
+            effect: particles
+            particle-name: blockcrack_9_0
+            horiz-spread: 0.75
+            vert-spread: 0.75
+            count: 150
+            speed: .1
+            effect-interval: 1.0
+        1:
+            position: buff
+            effect: particles
+            particle-name: splash
+            horiz-spread: 0.75
+            vert-spread: 0.75
+            count: 150
+            speed: .1
+            effect-interval: 1.0
+Hozuki1:
+    spell-class: ".MultiSpell"
+    name: "Hydrification Technique"
+    cooldown: 30
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    spells:
+        - Hozuki1DUM
+        - Hozuki1BUFF
+        - Hozuki1VAN
+Hozuki1VAN:
+    spell-class: ".buff.InvisibilitySpell"
+    toggle: true
+    prevent-pickups: true
+    cancel-on-give-damage: false
+    cancel-on-logout: true
+    duration: 20
+Hozuki1BUFF:
+    spell-class: ".targeted.PotionEffectSpell"
+    type: 10
+    strength: 0
+    duration: 400
+    targeted: false
+ 
+ 
+# Water Release: Water Drizzle
+ 
+# Multi
+Hozuki3MAIN:
+    spell-class: ".MultiSpell"
+    name: "Water Release: Water Drizzle"
+    cooldown: 25
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    spells:
+        - Hozuki3STRPART
+        - DELAY 14
+        - Hozuki3
+#Dum for ani ball then fires drizzle?
+Hozuki3STRPART:
+    spell-class: ".buff.DummySpell"
+    duration: 3
+    effects:
+            eff2:
+                  position: caster
+                  effect: effectlib
+                  effectlib:
+                      class: AnimatedBallEffect
+                      iterations: 2
+                      period: 10
+                      particlesPerIteration: 50
+                      size: 0.95
+                      particle: DRIP_WATER
+                      particles: 50
+# Pain spell to put in proj
+Hozuki3PAIN:
+    spell-class: ".targeted.PainSpell"
+    damage: 4
+    range: 15
+    ignore-armor: true
+    target-players: true
+# Proj spell
+Hozuki3:
+    spell-class: ".instant.ParticleProjectileSpell"
+    spell: Hozuki3PAIN
+    projectile-velocity: 15
+    projectile-gravity: 0
+    tick-interval: 3
+    special-effect-interval: 1
+    max-distance: 100
+    max-duration: 100
+    hit-radius: 3
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    effects:
+            eff2:
+                  position: special
+                  effect: effectlib
+                  effectlib:
+                      class: TornadoEffect
+                      iterations: 1
+                      tornadoParticle: DRIP_WATER
+                      tornadoColor: 6C3483
+                      cloudParticle: DRIP_WATER
+                      cloudSize: 0.5
+                      yOffset: 0
+                      tornadoHeight: 1
+                      maxTornadoRadius: 5
+                      showCloud: false
+                      showTornado: true
+                      distance: 0.67
+                      period: 1
+                      speed: 0.1
