@@ -1,0 +1,138 @@
+waterstylethousandfeedingsharks:
+    spell-class: ".MultiSpell"
+    name: "&1Water Release: Thousand Feeding Sharks"
+    cooldown: 50
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    target-players: true
+    spells:
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waters5ylbullsdhitsht
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+        - DELAY 5
+        - waterstylbullsdhitsht
+
+waterstylbullsdhitsht:
+    spell-class: ".instant.ParticleProjectileSpell"
+    hit-players: true
+    target-players: true
+    hit-entity: true
+    target-entity: true
+    hit-radius: 2
+    projectile-velocity: 30
+    hit-radius: 3
+    particle-name: dripWater
+    particle-horizontal-spread: 0.5
+    tick-interval: 2
+    special-effect-interval: 1
+    particle-count: 50
+    str-modifier-failed: You need to have a water source!
+    max-duration: 60
+    max-distance: 60
+    hit-players: true
+    spell: waterstylethousandfeedingsharksmissile
+    target-players: true
+    effects:
+      2:
+        position: special
+        effect: fireworks
+        flicker: false
+        trail: false
+        type: 0
+        flight: 0
+        effect-interval: 1
+        colors: 33CCFF
+      1:
+        position: special
+        effect: fireworks
+        flicker: false
+        trail: false
+        type: 0
+        flight: 0
+        effect-interval: 1
+        colors: 0066FF
+waterstylethousandfeedingsharksmissile:
+    spell-class: ".targeted.PainSpell"
+    damage: 9
+    range: 15
+    ignore-armor: false
+    obey-los: true
+    target-players: true
+    check-plugins: true
