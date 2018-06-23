@@ -1,0 +1,49 @@
+YamanakaFlowerBomb:
+    spell-class: ".MultiSpell"
+    name: "Yamanaka Flower Bomb"
+    spell-icon: gold_axe
+    cooldown: 25
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    spells:
+       - YamanakaFlowerBomb_Part
+YamanakaFlowerBomb_Part:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 15
+    projectile-gravity: 0
+    tick-interval: 2
+    special-effect-interval: 1
+    particle-name: blockcrack_38_4
+    particle-speed: 0.01
+    particle-count: 70
+    particle-horizontal-spread: 0.5
+    particle-vertical-spread: 0.5
+    max-distance: 100
+    max-duration: 100
+    hit-players: true
+    hit-non-players: true
+    spell: YamanakaFlowerBomb_Pain
+    effects:
+        Flower:
+            position: special
+            effect: itemspray
+            type: 38
+            data: 4
+            quantity: 25
+            force: 10
+            duration: 15
+            render-distance: 15
+YamanakaFlowerBomb_Pain:
+    spell-class: ".targeted.PainSpell"
+    damage: 8
+    range: 15
+    ignore-armor: false
+    target-players: true
+    effects:
+        1:
+            position: target
+            effect: particles
+            particle-name: largeexplode
+            count: 50
+            horiz-spread: 0.5
+            vert-spread: 0.5
