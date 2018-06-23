@@ -1,0 +1,75 @@
+RH:
+    spell-class: ".MultiSpell"
+    name: "Ninja Arts: Rising Dragon Head"
+    cast-item: stick
+    cooldown: 25
+    spells:
+        - RH_Proj
+        
+RH_Proj:
+    spell-class: ".instant.ParticleProjectileSpell"
+    can-target: players,monsters,animals
+    projectile-velocity: 14
+    particle-name: blockcrack_0_0
+    damage: 0
+    particle-speed: .15
+    cooldown: 25
+    particle-count: 0
+    particle-horizontal-spread: 0.7
+    special-effect-interval: 1
+    particle-vertical-spread: 0.7
+    max-distance: 14
+    max-duration: 200
+    stop-on-hit-entity: true
+    spell: RH_PartMulti
+    effects:
+        vrtx:
+            position: special
+            effect: effectlib
+            effectlib:
+                class: VortexEffect
+                particle: cloud
+                radius: 0.75
+                iterations: 20
+                
+RH_PartMulti:
+    spell-class: ".TargetedMultiSpell"
+    spells:
+        - RH_Stun
+        - DELAY 15
+        - RH_Pain
+        - RH_Geys
+        
+RH_Stun:
+    spell-class: ".targeted.StunSpell"
+    duration: 2
+    effects:
+         Particles:
+              position: target
+              effect: effectlibentity
+              effectlib:
+                   class: AnimatedBallEffect
+                   particle: CLOUD
+                   size: 1.15
+                   particlesPerIteration: 100
+                   relativeOffset: 0,0,0
+                   iterations: 20
+                   
+RH_Pain:
+    spell-class: ".targeted.PainSpell"
+    cooldown: 5
+    damage: 7
+    range: 15
+    ignore-armor: false
+    can-target: players,monsters,animals
+    
+RH_Geys:
+    spell-class: ".targeted.GeyserSpell"
+    range: 20
+    damage: 0
+    velocity: 15
+    animation-speed: 2
+    geyser-height: 6
+    geyser-type: "0"
+    ignore-armor: false
+    target-players: true
