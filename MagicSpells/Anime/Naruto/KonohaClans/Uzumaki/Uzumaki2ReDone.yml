@@ -1,0 +1,13 @@
+Uzumaki2:
+    spell-class: ".targeted.StunSpell"
+    name: "Chakra Stun"
+    cost:
+     - mana 50
+    str-cost: 50 mana
+    duration: 15
+    cooldown: 40
+    cast-item: magma_cream
+    effects:
+    - target smokeswirl
+    - target smokeswirl
+    - target smokeswirl
