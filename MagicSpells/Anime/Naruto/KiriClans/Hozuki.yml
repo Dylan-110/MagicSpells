@@ -167,3 +167,62 @@ Hozuki3:
                       distance: 0.67
                       period: 1
                       speed: 0.1
+
+HDB_Home:
+    spell-class: ".targeted.HomingMissileSpell"
+    name: "Water Style: Drowing Blob"
+    cast-item: magma_cream
+    projectile-velocity: 15
+    cooldown: 25
+    tick-interval: 1
+    special-effect-interval: 2
+    max-distance: 100
+    hit-players: true
+    hit-non-players: true
+    stop-on-hit-entity: true
+    range: 12
+    spell: HBlob_part
+    effects:
+        3:
+            position: special
+            effect: particles
+            particle-name: splash
+            horiz-spread: 0.5
+            vert-spread: 0.5
+            count: 75
+            y-offset: 0.5
+HBlob_part:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    spells:
+        - Blob_stun
+        - Blob_pain
+        - DELAY 10
+        - Blob_pain
+        - DELAY 10
+        - Blob_pain
+        - DELAY 10
+        - Blob_pain
+Blob_stun:
+    spell-class: ".targeted.StunSpell"
+    duration: 5
+Blob_pain:
+    spell-class: ".targeted.PainSpell"
+    damage: 2.5
+    range: 15
+    ignore-armor: false
+    can-target: players,monsters,animals
+    effects:
+      eff1:
+                  position: target
+                  effect: effectlib
+                  effectlib:
+                      class: SphereEffect
+                      particle: REDSTONE
+                      iterations: 3
+                      radius: 0.45
+                      particles: 100
+                      period: 1
+                      visibleRange: 100
+                      color: 2C538F
+                      relativeOffset: 0,2.1,0
