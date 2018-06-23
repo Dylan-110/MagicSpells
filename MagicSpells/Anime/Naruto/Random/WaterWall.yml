@@ -1,0 +1,108 @@
+WW:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    name: "Water Protective Wall"
+    cast-item: magma_cream
+    cooldown: 20
+    spells:
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+        - WW_Dummy
+        - WW_AoE
+        - DELAY 7
+ 
+WW_Force:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 10
+    damage: 0
+    horizontal-force: 17
+    vertical-force: 5
+    can-target: players,monsters,animals
+ 
+WW_AoE:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 6
+    range: 10
+    vertical-radius: 6
+    fail-if-no-targets: false
+    spell-source-in-center: true
+    target-players: true
+    target-non-players: true
+    spells:
+        - WW_Pain
+        - WW_Force
+ 
+WW_Pain:
+    spell-class: ".targeted.PainSpell"
+    damage: 3.5
+    range: 10
+    ignore-armor: false
+    can-target: players,monsters,animals
+    effects:
+        1:
+          position: line
+          effect: particles
+          particle-name: blockcrack_8_0
+          horiz-spread: 0.5
+          vert-spread: 0.5
+          count: 150
+          speed: .5
+          y-offset: 0.5
+          render-distance: 10
+ 
+WW_Dummy:
+    spell-class: ".buff.DummySpell"
+    duration: 10
+    effects:
+      eff1:
+                  position: caster
+                  effect: effectlib
+                  effectlib:
+                      class: WarpEffect
+                      particle: REDSTONE
+                      color: 2C538F
+                      radius: 1
+                      particles: 20
+                      grow: 0.2
+                      rings: 7
+                      period: 1
