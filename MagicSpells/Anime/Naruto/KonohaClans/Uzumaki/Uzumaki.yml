@@ -1,0 +1,64 @@
+Uzumaki1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    name: Chakra Chains Attack
+    cooldown: 20
+    cast-item: magma_cream
+    projectile-velocity: 24
+    projectile-gravity:
+    hug-surface: true
+    particle-name: blockcrack_101_0
+    special-effect-interval: 1
+    damage: 6
+    particle-speed: 1
+    particle-count: 200
+    particle-horizontal-spread: .5
+    particle-vertical-spread: .5
+    max-distance: 25
+    hit-players: true
+    hit-non-players: true
+    hit-ground: false
+    effects:
+        - line particleline 0.25 blockcrack_101_0 0.2 0.2 0.1 10 0.5
+Uzumaki2:
+    spell-class: ".buff.InvisibilitySpell"
+    name: "Hide Chakra"
+    cast-item: magma_cream
+    cooldown: 25
+    toggle: true
+    prevent-pickups: true
+    cancel-on-give-damage: false
+    cancel-on-logout: true
+    duration: 10
+Uzumaki3:
+    spell-class: ".instant.ParticleProjectileSpell"
+    name: Chakra Sealing
+    cooldown: 15
+    cast-item: magma_cream
+    projectile-velocity: 30
+    projectile-gravity:
+    hug-surface: false
+    range: 5
+    particle-name: happyVillager
+    spell: Uzumaki3_3
+    special-effect-interval: 1
+    damage: 4
+    particle-speed: 1
+    particle-count: 200
+    particle-horizontal-spread: .5
+    particle-vertical-spread: .5
+    max-distance: 25
+    hit-players: true
+    hit-non-players: true
+    hit-ground: false
+    effects:
+    - target particles blockcrack_101_0 1 1 100 100
+Uzumaki3_3:
+    spell-class: ".targeted.SilenceSpell"
+    range: 10
+    prevent-cast: true
+    prevent-chat: false
+    prevent-commands: false
+    duration: 200
+    allowed-spells:
+        - list
+        - help
