@@ -1,0 +1,156 @@
+Kazeyuza1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    cooldown: 12
+    cost:
+        - mana 30
+    str-cost: 30 chakra
+    name: "Fan Style: Tornado"
+    cast-item: magma_cream
+    hit-players: true
+    hit-radius: 3
+    projectile-velocity: 20
+    stop-on-hit-entity: true
+    tick-interval: 1
+    damage: 2
+    particle-name: largeexplode
+    particle-horizontal-spread: 0.5
+    particle-vertical-spread: 3
+    particle-count: 50
+    max-duration: 100
+    max-distance: 100
+    special-effect-interval: 1
+    spell: Kazeyuza1_1
+    effects:
+        1:
+             position: special
+             effect: particles
+             particle-name: largeexplode
+             horiz-spread: 1.5
+             vert-spread: 1
+             y-offset: 3
+             count: 15
+        3:
+             position: special
+             effect: particles
+             particle-name: largeexplode
+             horiz-spread: 1
+             vert-spread: 1
+             y-offset: 2
+             count: 15
+        4:
+             position: special
+             effect: particles
+             particle-name: largeexplode
+             horiz-spread: 0.5
+             vert-spread: 1
+             y-offset: 0.5
+             count: 15
+        5:
+             position: special
+             effect: particles
+             particle-name: largeexplode
+             horiz-spread: 0.5
+             vert-spread: 1
+             y-offset: 0.5
+             count: 15
+Kazeyuza1_3:
+    spell-class: ".targeted.ForcetossSpell"
+    horizontal-force: 5
+    vertical-force: 5
+    target-players: true
+Kazeyuza1_2:
+    spell-class: ".targeted.PainSpell"
+    damage: 4
+    range: 10
+    ignore-armor: true
+    target-players: true
+    effects:
+        1:
+            position: target
+            effect: particles
+            particle-name: largeexplode
+            count: 50
+            horiz-spread: 0.5
+            vert-spread: 0.5
+Kazeyuza1_1:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: true
+    spells:
+        - Kazeyuza1_3
+        - Kazeyuza1_2
+Kazeyuza2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    cooldown: 10
+    name: "Fan Style: Super Tornado"
+    cost:
+        - mana 30
+    str-cost: 30 chakra
+    cast-item: magma_cream
+    hit-radius: 2
+    projectile-velocity: 15
+    stop-on-hit-entity: true
+    hit-players: true
+    tick-interval: 1
+    damage: 1
+    particle-name: blockcrack_35_0
+    particle-horizontal-spread: 1
+    particle-vertical-spread: 1
+    y-offset: 1
+    particle-count: 50
+    max-duration: 60
+    max-distance: 20
+    special-effect-interval: 1
+    spell: Kazeyuza2_2
+Kazeyuza2_2:
+    spell-class: ".targeted.PainSpell"
+    damage: 4
+    range: 10
+    ignore-armor: false
+    can-target: players,monsters,animals
+    check-plugins: true
+    effects:
+      eff1:
+                  position: target
+                  effect: effectlib
+                  effectlib:
+                      class: SphereEffect
+                      particle: REDSTONE
+                      iterations: 5
+                      radius: 2
+                      particles: 50
+                      period: 1
+                      visibleRange: 100
+                      color: 636363
+                      relativeOffset: 0,2,0
+Kazeyuza3:
+    spell-class: ".buff.WindwalkSpell"
+    name: "Fan Style: WindWalk"
+    enabled: true
+    max-altitude: 10
+    cast-item: magma_cream
+    cost:
+        - mana 20
+    str-cost: 20 chakra
+    fly-speed: 0.1
+    launch-speed: 1
+    cancel-on-land: false
+    cancel-on-logout: true
+    cancel-on-teleport: false
+    cancel-on-give-damage: true
+    cancel-on-take-damage: false
+    duration: 10
+    cooldown: 20
+    effects:
+        1:
+            position: orbit
+            effect: particles
+            particle-name: blockcrack_35_0
+            horiz-spread: 0.5
+            vert-spread: 0.5
+            count: 100
+            speed: 0
+            orbit-counter-clockwise: true
+            orbit-seconds-per-revolution: .3
+            orbit-y-offset: 0.3
+            orbit-radius: 0.3
