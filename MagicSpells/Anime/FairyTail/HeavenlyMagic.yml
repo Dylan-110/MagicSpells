@@ -1,0 +1,451 @@
+HM1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    name: "Heavenly Magic: Light Over Flow"
+    particle-speed: 0
+    projectile-gravity: 0
+    projectile-velocity: 10
+    max-distance: 7
+    hit-radius: 4
+    particle-name: FLAME
+    hit-players: true
+    hit-non-players: true
+    stop-on-hit-entity: false
+    stop-on-hit-ground: true
+    special-effect-interval: 1
+    spell: HMGH_pain
+    effects:
+      eff5:  
+       effect: effectlib
+       position: special
+       effectlib:
+           class: DragonEffect
+           particle: REDSTONE
+           color: FFFF00
+           pitch: 0.8
+           arcs: 25
+           particles: 100
+           stepsPerIteration: 2
+           length: 7
+           step: 0
+           period: 2
+           iterations: 17
+HMGH_pain:
+    spell-class: ".targeted.PainSpell"
+    special-effect-interval: 1
+    damage: 5
+    range: 10
+    ignore-armor: false
+    can-target: players, monsters, animals
+    check-plugins: true
+
+HM2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    name: "&1Heavenly Magic: &7Holy Fire"
+    cast-item: blaze_rod
+    cooldown: 25
+    cost:
+        - mana 75
+    projectile-velocity: 15
+    max-distance: 10
+    hit-radius: 2.5
+    particle-name: dragonbreath
+    hit-players: true
+    hit-non-players: true
+    stop-on-hit-entity: false
+    stop-on-hit-ground: true
+    special-effect-interval: 1
+    spell: HM2_aoe
+    effects:
+      eff1:      
+        position: special
+        effect: effectlib
+        effectlib:
+           class: VortexEffect
+           particle: REDSTONE
+           color: E8BD33
+           radius: 0.5
+           grow: 0.05
+           radials: 8
+           circles: 50
+           helixes: 3
+           iterations: 1
+HM2_aoe:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 2.5
+    vertical-radius: 2.5
+    point-blank: false
+    target-players: true
+    fail-if-no-targets: false
+    spells:
+        - HM2_pain
+        - HM2_effc
+        - HM2_combust
+HM2_eff:
+    spell-class: ".targeted.DummySpell"
+    can-target: players,monsters,animals
+    target-players: true
+    target-non-players: true
+    effects:
+      eff3:
+        position: target
+        effect: effectlib
+        effectlib:
+           class: SphereEffect
+           particle: REDSTONE
+           color: FFFF00
+           particles: 45
+           radius: 0.8
+           iterations: 3
+           period: 1
+           relativeOffset: 0,1,0
+HM2_effc:
+    spell-class: ".TargetedMultiSpell"
+    spells:
+        - HM2_eff
+        - DELAY 5
+        - HM2_eff
+        - DELAY 5
+        - HM2_eff
+        - DELAY 5
+        - HM2_eff
+        - DELAY 5
+        - HM2_eff
+        - DELAY 5
+        - HM2_eff
+        - DELAY 5
+        - HM2_eff
+        - DELAY 5
+        - HM2_eff
+        - DELAY 5
+        - HM2_eff
+HM2_pain:
+    spell-class: ".targeted.PainSpell"
+    special-effect-interval: 1
+    damage: 2.5
+    range: 10
+    ignore-armor: false
+    can-target: players, monsters, animals
+    check-plugins: true
+HM2_combust:
+    spell-class: ".targeted.CombustSpell"
+    obey-los: true
+    fire-ticks: 60
+    fire-tick-damage: 1.5
+    prevent-immunity: true
+    target-players: true
+    check-plugins: true
+    
+Heav2:
+    spell-class: ".buff.DummySpell"
+    name: D
+    duration: 10
+    effects:
+        1:
+            position: orbit
+            effect: particles
+            particle-name: blockcrack_35_4
+            horiz-spread: 0.1
+            vert-spread: 0.1
+            count: 50
+            speed: 0
+            orbit-counter-clockwise: true
+            orbit-seconds-per-revolution: 1
+            orbit-y-offset: 1.5
+            orbit-radius: 0.75
+        2:
+            position: orbit
+            effect: particles
+            particle-name: blockcrack_159_4
+            horiz-spread: 0.1
+            vert-spread: 0.1
+            count: 50
+            speed: 0
+            orbit-counter-clockwise: true
+            orbit-seconds-per-revolution: 1
+            orbit-y-offset: 0.99
+            orbit-radius: 0.75
+        3:
+            position: orbit
+            effect: particles
+            particle-name: blockcrack_95_4
+            horiz-spread: 0.1
+            vert-spread: 0.1
+            count: 50
+            speed: 0
+            orbit-counter-clockwise: true
+            orbit-seconds-per-revolution: 1
+            orbit-y-offset: 0.20
+            orbit-radius: 0.75
+Heav1:
+    spell-class: ".buff.DummySpell"
+    duration: 10
+    can-target: animals,players,monsters
+    effects:
+        1:
+            position: buff
+            effect: fireworks
+            effect-interval: 35
+            flicker: false
+            trail: true
+            type: 4
+            flight: 0
+            colors: ffff00
+HeavAOE:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 5
+    vertical-radius: 5
+    point-blank: true
+    fail-if-no-targets: false
+    can-target: players, monsters, animals
+    spells:
+        - HeavPain
+        - HeavForce
+HeavPain:
+    spell-class: ".targeted.PainSpell"
+    damage: 7
+    range: 25
+    ignore-armor: false
+    can-target: players, monsters, animals
+HeavForce:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 25
+    damage: 2
+    horizontal-force: 20
+    vertical-force: 15
+    target-players: true
+HeavRST:
+    spell-class: ".targeted.PotionEffectSpell"
+    type: 11
+    strength: 1
+    duration: 200
+    targeted: false
+    can-target: players,monsters
+    str-no-target: No target found.
+HeavPS:
+    spell-class: ".MultiSpell"
+    name: "&1Heavenly Magic: &9Heavenly Protection Swirl"
+    cool-down: 20
+    cast-item: blaze_powder
+    cost:
+        - mana 40
+    str-cost: 40 mana
+    spells:
+         - Heav1
+         - Heav2
+         - HeavRST
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
+         - DELAY 2
+         - HeavAOE
