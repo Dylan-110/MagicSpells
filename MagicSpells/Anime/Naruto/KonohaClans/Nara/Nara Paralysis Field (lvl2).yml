@@ -1,0 +1,376 @@
+Nara_PARAField:
+    spell-class: ".MultiSpell"
+    name: "Shadow Paralysis Field (lvl 2)"
+    cooldown: 25
+    check-individual-cooldowns: false
+    spells:
+        - Nara_ParaField_Dum
+        - DELAY 10
+        - Nara_PARAField_ProjMulti
+Nara_PARAField_ProjMulti:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    check-individual-cooldowns: false
+    spells:
+        - Nara_PF_Proj1
+        - Nara_PF_Proj2
+        - Nara_PF_Proj3
+        - Nara_PF_Proj4
+        - Nara_PF_Proj5
+        - Nara_PF_Proj6
+        - Nara_PF_Proj7
+        - Nara_PF_Proj8
+        - Nara_PF_Proj9
+Nara_ParaField_Dum:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+        1:
+            position: caster
+            effect: particles
+            horiz-spread: 0.85
+            vert-spread: 0.85
+            speed: 0
+            count: 100
+            particle-name: blockcrack_173_0
+Nara_PF_Proj1:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    particle-name: blockcrack_173_0
+    helper-spell: true
+    particle-name: blockcrack_173_0
+    hug-surface: true
+    tick-interval: 2
+    special-effect-interval: 1
+    damage: 20
+    max-distance: 100
+    max-duration: 120
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: Nara_PF_PartAoe
+    effects:
+      1:
+        position: special
+        effect: effectlib
+        effectlib:
+          class: VortexEffect
+          particle: REDSTONE
+          color: 000000
+          radius: 0.5
+          grow: 0.25
+          radials: 5
+          circles: 3
+          particles: 75
+          helixes: 4
+          step: 0
+          period: 1
+          iterations: 1
+Nara_PF_Proj2:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    max-duration: 120
+    helper-spell: true
+    particle-name: blockcrack_173_0
+    projectile-horiz-offset: 180
+    hug-surface: true
+    tick-interval: 2
+    special-effect-interval: 1
+    damage: 20
+    max-distance: 100
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: Nara_PF_PartAoe
+    effects:
+      1:
+        position: special
+        effect: effectlib
+        effectlib:
+          class: VortexEffect
+          particle: REDSTONE
+          color: 000000
+          radius: 0.5
+          grow: 0.25
+          radials: 5
+          circles: 3
+          helixes: 4
+          step: 0
+          particles: 75
+          period: 1
+          iterations: 1
+Nara_PF_Proj3:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-horiz-offset: 90
+    max-duration: 120
+    particle-name: blockcrack_173_0
+    projectile-velocity: 30
+    hug-surface: true
+    helper-spell: true
+    tick-interval: 2
+    special-effect-interval: 1
+    damage: 20
+    max-distance: 100
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: Nara_PF_PartAoe
+    effects:
+      1:
+        position: special
+        effect: effectlib
+        effectlib:
+          class: VortexEffect
+          particle: REDSTONE
+          color: 000000
+          radius: 0.5
+          grow: 0.25
+          particles: 75
+          radials: 5
+          circles: 3
+          helixes: 4
+          step: 0
+          period: 1
+          iterations: 1
+Nara_PF_Proj4:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    max-duration: 120
+    particle-name: blockcrack_173_0
+    helper-spell: true
+    projectile-horiz-offset: 270
+    hug-surface: true
+    tick-interval: 2
+    special-effect-interval: 1
+    damage: 20
+    max-distance: 100
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: Nara_PF_PartAoe
+    effects:
+      1:
+        position: special
+        effect: effectlib
+        effectlib:
+          class: VortexEffect
+          particle: REDSTONE
+          color: 000000
+          radius: 0.5
+          grow: 0.25
+          radials: 5
+          circles: 3
+          particles: 75
+          helixes: 4
+          step: 0
+          period: 1
+          iterations: 1
+Nara_PF_Proj5:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    max-duration: 120
+    particle-name: blockcrack_173_0
+    projectile-horiz-offset: 45
+    helper-spell: true
+    hug-surface: true
+    tick-interval: 2
+    special-effect-interval: 1
+    damage: 20
+    max-distance: 100
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: Nara_PF_PartAoe
+    effects:
+      1:
+        position: special
+        effect: effectlib
+        effectlib:
+          class: VortexEffect
+          particle: REDSTONE
+          color: 000000
+          radius: 0.5
+          grow: 0.25
+          radials: 5
+          circles: 3
+          helixes: 4
+          step: 0
+          particles: 75
+          period: 1
+          iterations: 1
+Nara_PF_Proj6:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    max-duration: 120
+    particle-name: blockcrack_173_0
+    helper-spell: true
+    projectile-horiz-offset: 135
+    hug-surface: true
+    tick-interval: 2
+    special-effect-interval: 1
+    damage: 20
+    max-distance: 100
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: Nara_PF_PartAoe
+    effects:
+      1:
+        position: special
+        effect: effectlib
+        effectlib:
+          class: VortexEffect
+          particle: REDSTONE
+          color: 000000
+          radius: 0.5
+          grow: 0.25
+          particles: 75
+          radials: 5
+          circles: 3
+          helixes: 4
+          step: 0
+          period: 1
+          iterations: 1
+Nara_PF_Proj7:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    max-duration: 120
+    particle-name: blockcrack_173_0
+    projectile-horiz-offset: 225
+    helper-spell: true
+    hug-surface: true
+    tick-interval: 2
+    special-effect-interval: 1
+    damage: 20
+    max-distance: 100
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: Nara_PF_PartAoe
+    effects:
+      1:
+        position: special
+        effect: effectlib
+        effectlib:
+          class: VortexEffect
+          particle: REDSTONE
+          color: 000000
+          radius: 0.5
+          grow: 0.25
+          radials: 5
+          circles: 3
+          helixes: 4
+          particles: 75
+          step: 0
+          period: 1
+          iterations: 1
+Nara_PF_Proj8:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    max-duration: 120
+    particle-name: blockcrack_173_0
+    projectile-horiz-offset: 315
+    hug-surface: true
+    tick-interval: 2
+    special-effect-interval: 1
+    helper-spell: true
+    damage: 20
+    max-distance: 100
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: Nara_PF_PartAoe
+    effects:
+      1:
+        position: special
+        effect: effectlib
+        effectlib:
+          class: VortexEffect
+          particle: REDSTONE
+          color: 000000
+          radius: 0.5
+          particles: 75
+          grow: 0.25
+          radials: 5
+          circles: 3
+          helixes: 4
+          step: 0
+          period: 1
+          iterations: 1
+Nara_PF_Proj9:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    max-duration: 120
+    particle-name: blockcrack_173_0
+    hug-surface: true
+    helper-spell: true
+    tick-interval: 2
+    special-effect-interval: 1
+    max-distance: 100
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: Nara_PF_PartAoe
+    effects:
+      1:
+        position: special
+        effect: effectlib
+        effectlib:
+          class: VortexEffect
+          particle: REDSTONE
+          color: 000000
+          radius: 0.5
+          grow: 0.25
+          radials: 5
+          circles: 3
+          particles: 75
+          helixes: 4
+          step: 0
+          period: 1
+          iterations: 1
+Nara_PF_PartAoe:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 5
+    vertical-radius: 5
+    helper-spell: true
+    target-players: true
+    target-non-players: true
+    fail-if-no-targets: false
+    spells:
+        - Nara_PF_Pain
+        - Nara_PF_Stun
+Nara_PF_Pain:
+    spell-class: ".targeted.PainSpell"
+    damage: 9
+    helper-spell: true
+    range: 15
+    ignore-armor: false
+    target-players: true
+    target-non-players: true
+Nara_PF_Stun:
+    spell-class: ".targeted.StunSpell"
+    duration: 10
+    helper-spell: true
+    effects:
+      1:
+        position: target
+        effect: effectlib
+        effectlib:
+          class: HelixEffect
+          particle: redstone
+          color: 000000
+          strands: 4
+          radius: 1.5
+          iterations: 14
+          period: 14
+          curve: 3
+          particles: 75
