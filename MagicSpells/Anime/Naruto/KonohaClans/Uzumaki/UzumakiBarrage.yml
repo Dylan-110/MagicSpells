@@ -1,0 +1,66 @@
+UzumakiBarrage:
+    spell-class: ".TargetedMultiSpell"
+    check-individual-cooldowns: false
+    require-entity-target: true
+    name: "Uzumaki Barrage"
+    cooldown: 15
+    spells:
+    - UzumakiBarrage_Step
+    - UzumakiBarrage_Pain
+    - DELAY 15
+    - UzumakiBarrage_Step
+    - UzumakiBarrage_Pain
+    - UzumakiBarrage_Toss
+    - DELAY 15
+    - UzumakiBarrage_Step
+    - UzumakiBarrage_Pain
+    - UzumakiBarrage_Toss2
+UzumakiBarrage_Step:
+    spell-class: ".targeted.ShadowstepSpell"
+    target-players: true
+    obey-los: true
+    range: 50
+    effects:
+      1:
+        position: pos1
+        effect: effectlib
+        effectlib:
+          class: WarpEffect
+          radius: 0.7
+          grow: 0.2
+          rings: 5
+          particle: REDSTONE
+          color: FF8C00
+          particles: 100
+          iterations: 1
+          relativeOffset: 0,0.5,0
+      2:
+        position: pos2
+        effect: effectlib
+        effectlib:
+          class: WarpEffect
+          radius: 0.7
+          particle: REDSTONE
+          color: FF8C00
+          grow: 0.2
+          rings: 5
+          particles: 100
+          iterations: 1
+          relativeOffset: 0,0.5,0
+UzumakiBarrage_Toss:
+    spell-class: ".targeted.ForcetossSpell"
+    horizontal-force: 2
+    vertical-force: 15
+    target-players: true
+UzumakiBarrage_Toss2:
+    spell-class: ".targeted.ForcetossSpell"
+    horizontal-force: 2
+    vertical-force: -15
+    target-players: true
+UzumakiBarrage_Pain:
+    spell-class: ".targeted.PainSpell"
+    damage: 3
+    ignore-armor: true
+    obey-los: false
+    target-players: true
+    check-plugins: false
