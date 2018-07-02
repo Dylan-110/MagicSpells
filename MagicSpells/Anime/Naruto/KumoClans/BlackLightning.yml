@@ -1,0 +1,87 @@
+LightningRelease_BlackLightningPanther2:
+    spell-class: ".MultiSpell"
+    name: "Lighting Release: Black Lightning Panther (lvl 2)"
+    check-individual-cooldowns: false
+    spells:
+        - LightningRelease_BlackLightningPanther2_dummy
+        - DELAY 5
+        - LightningRelease_BlackLightningPanther2_dummy
+        - DELAY 5
+        - LightningRelease_BlackLightningPanther2_dummy
+        - DELAY 12
+        - LightningRelease_BlackLightningPanther2_projmulti
+LightningRelease_BlackLightningPanther2_dummy:
+    spell-class: ".instant.DummySpell"
+    helper-spell: true
+    effects:
+        1:
+          position: caster
+          effect: lightning
+LightningRelease_BlackLightningPanther2_projmulti:
+    spell-class: ".MultiSpell"
+    helper-spell: true
+    check-individual-cooldowns: false
+    spells:
+        - LightningRelease_BlackLightningPanther2_proj
+LightningRelease_BlackLightningPanther2_proj:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    particle-name: blockcrack_160_15
+    helper-spell: true
+    hug-surface: false
+    tick-interval: 2
+    special-effect-interval: 1
+    max-distance: 20
+    max-duration: 100
+    hit-air-during: true
+    hit-radius: 5
+    hit-players: true
+    hit-non-players: true
+    hit-ground: true
+    spell: LightningRelease_BlackLightningPanther2_aoe
+    effects:
+        1:
+            position: special
+            effect: particles
+            particle-name: blockdust_160_15
+            horiz-spread: 0.3
+            vert-spread: 0.3
+            count: 145
+            y-offset: 0.7
+LightningRelease_BlackLightningPanther2_aoe:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 7
+    vertical-radius: 7
+    spell-source-in-center: false
+    helper-spell: true
+    target-players: true
+    target-non-players: true
+    fail-if-no-targets: false
+    spells:
+        - LightningRelease_BlackLightningPanther2_Pain
+        - LightningRelease_BlackLightningPanther2_Stun
+LightningRelease_BlackLightningPanther2_Pain:
+    spell-class: ".targeted.PainSpell"
+    damage: 12
+    range: 10
+    helper-spell: true
+    ignore-armor: false
+    can-target: players,monsters,animals
+    effects:
+        1:
+          position: line
+          effect: particles
+          particle-name: blockcrack_8_0
+          horiz-spread: 0.5
+          vert-spread: 0.5
+          count: 150
+          speed: .5
+          y-offset: 0.5
+          render-distance: 10
+        2:
+          position: target
+          effect: lightning
+LightningRelease_BlackLightningPanther2_Stun:
+    spell-class: ".targeted.StunSpell"
+    helper-spell: true
+    duration: 10
