@@ -34,7 +34,7 @@ A:
        particle: REDSTONE
        color: FF0000
        stepX: 4 #low = more particles
-       stepY: 4 #low = more particles
+       stepY: 4 #low = more particles 
        iterations: 2
        relativeOffset: 0,2,0
 B:
