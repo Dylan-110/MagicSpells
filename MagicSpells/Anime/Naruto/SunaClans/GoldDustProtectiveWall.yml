@@ -1,0 +1,82 @@
+variables:
+    GDDumLoop:
+        type: player
+        min: 0
+        max: 200
+        default: 0
+        permanent: false
+    GDAreaLoop:
+        type: player
+        min: 0
+        max: 150
+        default: 0
+        permanent: false
+GD_PW:
+    spell-class: ".MultiSpell"
+    name: "Gold Dust Protective Wall"
+    cooldown: 30
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    spells:
+        - GD_PW_DummyMult
+        - GD_PW_AreaMult
+GDReset:
+    spell-class: ".instant.DummySpell"
+    variable-mods-cast:
+          - GDDumLoop 0
+GD_PW_DummyMult:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    spells:
+        - GD_PW_Dummy
+        - DELAY 2
+        - GD_PW_DummyMult
+    variable-mods-cast:
+        - GDDumLoop 1
+    modifiers:
+       - variableequals GDDumLoop:200 castinstead GDReset
+GD_PW_Dummy:
+   spell-class: ".instant.DummySpell"
+   effects:
+    Warp:
+     effect: effectlib
+     position: caster
+     effectlib:
+       class: WarpEffect
+       radius: 1
+       particles: 20
+       particle: REDSTONE
+       color: fbe3a5
+       grow: .2
+       rings: 12
+       step: 0
+       period: 1
+GD_PW_AreaMult:
+    spell-class: ".MultiSpell"
+    check-individual-cooldowns: false
+    spells:
+        - GD_PW_Area
+        - DELAY 10
+        - GD_PW_AreaMult
+    variable-mods-cast:
+        - GDAreaLoop 1
+    modifiers:
+        - variableequals GDAreaLoop:150 castinstead reset
+GD_PW_Area:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 3.75
+    vertical-radius: 3.75
+    point-blank: true
+    fail-if-no-targets: false
+    can-target: players,monsters,animals
+    spells:
+        - GD_PW_ForceToss
+GD_PW_ForceToss:
+    spell-class: ".targeted.ForcetossSpell"
+    range: 10
+    damage: 3.5
+    horizontal-force: 18
+    vertical-force: 6
+    obey-los: false
+    target-players: true
+    check-plugins: false
