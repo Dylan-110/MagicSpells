@@ -1,0 +1,83 @@
+WR_SBT:
+    spell-class: ".MultiSpell"
+    name: "Wood Release: Smothering Binding Technique"
+    cooldown: 25
+    cast-item: magma_cream
+    check-individual-cooldowns: false
+    spells:
+       - WR_SBT_Proj
+WR_SBT_Proj:
+    spell-class: ".instant.ParticleProjectileSpell"
+    projectile-velocity: 30
+    helper-spell: true
+    projectile-gravity: 0
+    tick-interval: 1
+    special-effect-interval: 1
+    particle-name: blockcrack_17_0
+    particle-speed: 0.75
+    particle-count: 70
+    particle-horizontal-spread: 0.5
+    particle-vertical-spread: 0.5
+    max-distance: 75
+    max-duration: 100
+    hug-surface: true
+    hit-players: true
+    hit-non-players: true
+    spell: WR_SBT_Aoe
+    effects:
+        Wood:
+            position: special
+            effect: effectlib
+            effectlib:
+              class: VortexEffect
+              particle: REDSTONE
+              color: baa48a
+              iterations: 1
+              period: 1
+              radius: 0.5
+              grow: 0.25
+              radials: 2
+              circles: 2
+              particles: 75
+              helixes: 2
+WR_SBT_Aoe:
+    spell-class: ".targeted.AreaEffectSpell"
+    horizontal-radius: 1.5
+    vertical-radius: 1.5
+    spell-source-in-center: true
+    helper-spell: true
+    target-players: true
+    target-non-players: true
+    fail-if-no-targets: false
+    spells:
+       - WR_SBT_Pain
+        - WR_SBT_Stun
+WR_SBT_Pain:
+    spell-class: ".targeted.PainSpell"
+    damage: 7
+    range: 9
+    helper-spell: true
+    ignore-armor: true
+    can-target: players,monsters,animals
+    effects:
+      1:
+        position: target
+        effect: effectlib
+        effectlib:
+          class: WarpEffect
+          particle: REDSTONE
+          color: baa48a
+          radius: 0.75
+          particles: 20
+          grow: 0.5
+          rings: 7
+          period: 1
+      2:
+        position: target
+        effect: nova
+        type: 17
+        radius: 1
+WR_SBT_Stun:
+    spell-class: ".targeted.StunSpell"
+    helper-spell: true
+    duration: 7
