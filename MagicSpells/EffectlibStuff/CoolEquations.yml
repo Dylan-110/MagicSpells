@@ -1,0 +1,58 @@
+                  effects:  # vortex like shape
+                      1:
+                          effect: effectlibentity
+                          position: projectile
+                          effectlib:
+                            class: EquationEffect
+                            xEquation: 0
+                            yEquation: 0
+                            zEquation: 0
+                            duration: 10000
+                            particles: 10
+                            cycle: true
+                            x2Equation: "sin((0.0315) * t2)"
+                            disappearWithOriginEntity: true
+                            y2Equation: "sin((0.1) * t2)"
+                            z2Equation: "cos((0.1) * t2)"
+                            particles2: 150
+                            relativeOffset: 0,0,0
+                            
+                            
+                            
+    effects: # left slash
+        1:
+            effect: effectlibentity
+            position: projectile
+            effectlib:
+              class: EquationEffect
+              xEquation: 0
+              yEquation: 0
+              zEquation: 0
+              duration: 10000
+              particles: 10
+              cycle: true
+              x2Equation: "cos((0.025) * t2)"
+              disappearWithOriginEntity: true
+              y2Equation: "sin((0.025) * t2)"
+              z2Equation: "tan((0.025) * t2)"
+              particles2: 35
+              relativeOffset: 0,0,0
+              
+    effects: # full circle
+        1:
+            effect: effectlibentity
+            position: projectile
+            effectlib:
+              class: EquationEffect
+              xEquation: 0
+              yEquation: 0
+              zEquation: 0
+              duration: 10000
+              particles: 10
+              cycle: true
+              x2Equation: "sin((0.0314) * t2)"
+              disappearWithOriginEntity: true
+              y2Equation: "cos((0.314) * t2)"
+              z2Equation: "sin((0.314) * t2)"
+              particles2: 75
+              relativeOffset: 0,0,0 
